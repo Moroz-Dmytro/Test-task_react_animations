@@ -1,0 +1,103 @@
+@import '../../extends/mixins';
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 17px;
+
+  &__languages {
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    transform: translateY(-50%);
+    display: none;
+    column-gap: 16px;
+    padding: 0 0 0 16px;
+    margin: 0;
+    list-style: none;
+
+    &:hover {
+      display: flex;
+    }
+  }
+
+  &__language {
+    font-size: 10px;
+    line-height: 140%;
+    letter-spacing: 0.15em;
+    color: #fff;
+    opacity: 0.5;
+    transition: all 0.3s;
+
+    &:hover {
+      cursor: pointer;
+      opacity: 1;
+    }
+  }
+
+  &__img{
+    position: relative;
+    display: flex;
+    align-items: center;
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    &:hover .header__languages{
+      display: flex;
+    }
+  }
+
+  &__text {
+    position: relative;
+    font-size: 18px;
+    line-height: 110%;
+    text-align: center;
+    text-transform: uppercase;
+    color: #000000;
+
+    @include on414 {
+      font-size: 20px;
+    }
+
+    @include on768 {
+      font-size: 24px;
+    }
+
+    @include on1440 {
+      font-size: 28px;
+    }
+
+    &::before {
+      position: absolute;
+      content: attr(data-content);
+      width: 0;
+      white-space: nowrap;
+      top: 0;
+      left: 0;
+      color: #fff;
+      -webkit-text-stroke: 1px black;
+      overflow: hidden;
+      transition: width 0.3s ease;
+    }
+
+    &:hover::before {
+      width: 100%;
+      cursor: pointer;
+    }
+  }
+
+  &__menu {
+    height: 10px;
+    width: 22px;
+    box-sizing: border-box;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+
+    @include on768 {
+      visibility: hidden;
+    }
+  }
+}

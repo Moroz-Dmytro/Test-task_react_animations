@@ -1,3 +1,98 @@
-.starter {
-  font-size: 18px;
+@import './extends/mixins';
+
+.App {
+  height: 100vh;
+  position: relative;
+  background-color: #e5e5e5;
+
+  &__sun {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 294px;
+    height: 294px;
+    border-radius: 50%;
+    background: #FFCB46;
+    filter: blur(46.3568px);
+
+    @include on768 {
+      width: 482px;
+      height: 482px;
+    }
+
+    @include on1440 {
+      width: 578px;
+      height: 578px;
+    }
+  }
+
+  &__title {
+    position: absolute;
+    width: 333px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 34px;
+    line-height: 110%;
+    text-align: center;
+    text-transform: uppercase;
+    color: #373737;
+
+    @include on414 {
+      width: 353px;
+      font-size: 36px;
+    }
+
+    @include on768 {
+      width: 568px;
+      font-size: 58px;
+    }
+
+    @include on1024 {
+      width: 724px;
+    }
+
+    @include on1440 {
+      width: 1023px;
+      font-size: 82px;
+    }
+  }
+
+  &__question {
+    display: none;
+    font-size: 14px;
+    line-height: 140%;
+    text-align: center;
+    color: #373737;
+
+    &--where {
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%) rotate(-90deg) translateY(-100%);
+    }
+
+    &--what {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%) rotate(90deg) translateY(-100%);
+      right: 10px;
+    }
+
+    &--who {
+      position: absolute;
+      bottom: 12px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    @include on768 {
+      display: block;
+    }
+
+    @include on1440 {
+      font-size: 16px;
+    }
+  }
 }

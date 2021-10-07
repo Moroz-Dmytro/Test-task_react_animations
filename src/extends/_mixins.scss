@@ -1,0 +1,29 @@
+@mixin on375 {
+  @media (min-width: 375px) {
+    @content;
+  }
+}
+
+@mixin on414 {
+  @media (min-width: 414px) {
+    @content;
+  }
+}
+
+@mixin on768 {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin on1024 {
+  @media (min-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin on1440 {
+  @media (min-width: 1440px) {
+    @content;
+  }
+}
